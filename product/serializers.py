@@ -1,9 +1,9 @@
 from rest_framework import serializers
 from .models import Product
-from category.models import Category
-from userauth.models import CustomUser
 
 class ProductSerializer(serializers.ModelSerializer):
+
+    image_url = serializers.ImageField(max_length=None, use_url=True)
     class Meta:
         model = Product
         fields = '__all__'

@@ -19,6 +19,8 @@ from django.urls import path, include
 from userauth import urls as userauth_urls
 from product import urls as product_urls
 from category import urls as category_urls
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 admin.site.site_header = "Eshop Admin"
@@ -32,4 +34,4 @@ urlpatterns = [
     path('api/auth/', include(userauth_urls)),
     path('api/product/', include(product_urls)),
     path('api/category/', include(category_urls)),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

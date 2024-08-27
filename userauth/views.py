@@ -98,7 +98,6 @@ def signup(request):
 
     # if isSeller is true
     if request.data['user_type'] == 'seller':
-        # print("sellers", request.data['is_seller'])
         request.data['user_type'] = 'seller'
     else:
         request.data['user_type'] = 'buyer'
